@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <div class="header">
+        <div class="loc_name">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3 class="location">Mumbai</h3>
+        </div>
+
+        <input class="loc_search" type="text" placeholder="Search Location">
+    </div>
+
+
+    <!-- ================= WEATHER ================= -->
+    <div class="weather">
+
+        <!-- LEFT: TEMP -->
+        <div class="temp">
+            <h1 class="temperature"><i class="fa-regular fa-sun"></i>  32°C</h1>
+            <p class="desc">Partly Cloudy</p>
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="temp_details">
+
+            <!-- ROW 1 -->
+            <div class="temp_details_row1">
+
+                <div class="row1_cards">
+                    <p class="card_title"><i class="fa-solid fa-droplet"></i> Humidity</p>
+                    <h2 class="card_val humidity">70%</h2>
+                </div>
+
+                <div class="row1_cards">
+                    <p class="card_title"><i class="fa-solid fa-gauge-simple-high"></i> Pressure</p>
+                    <h2 class="card_val pressure">1012</h2>
+                </div>
+
+                <div class="row1_cards">
+                    <p class="card_title"><i class="fa-solid fa-wind"></i> Wind</p>
+                    <h2 class="card_val wind">12 m/s</h2>
+                </div>
+
+            </div>
+
+            <!-- ROW 2 (WEEKLY FORECAST) -->
+            <div class="temp_details_row2">
+
+                <!-- Day Card -->
+                <div class="row2_cards">
+                    <p class="card_title">Mon</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-sun"></i>
+                        <div class="max_min">
+                            <span>20°</span>
+                            <span>11°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row2_cards">
+                    <p class="card_title">Tue</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-sun"></i>
+                        <div class="max_min">
+                            <span>22°</span>
+                            <span>12°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row2_cards">
+                    <p class="card_title">Wednesday</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-sun"></i>
+                        <div class="max_min">
+                            <span>21°</span>
+                            <span>10°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row2_cards">
+                    <p class="card_title">Thu</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-cloud"></i>
+                        <div class="max_min">
+                            <span>19°</span>
+                            <span>9°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row2_cards">
+                    <p class="card_title">Fri</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-cloud-rain"></i>
+                        <div class="max_min">
+                            <span>18°</span>
+                            <span>8°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row2_cards">
+                    <p class="card_title">Sat</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-sun"></i>
+                        <div class="max_min">
+                            <span>23°</span>
+                            <span>13°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row2_cards">
+                    <p class="card_title">Sun</p>
+                    <div class="card_desc">
+                        <i class="fa-regular fa-sun"></i>
+                        <div class="max_min">
+                            <span>24°</span>
+                            <span>14°</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= AQI ================= -->
+    <div class="air_qual">
+
+        <!-- LEFT: MAIN AQI -->
+        <div class="aqi_main">
+            <h2 class="aqi"><i class="fa-solid fa-wind"></i>   Air Quality</h2>
+            <div class="aqi_body">
+               <h1 class="main_aqi">142</h1>
+               <h3 class="aqi_desc"></h3>
+            </div>
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="aqi_details">
+
+            <div class="aqi-container">
+
+                <!-- CARD -->
+                <div class="card warning">
+                    <div class="left">
+                        <i class="fa-solid fa-smog"></i>
+                        <div>
+                            <p class="title">PM2.5</p>
+                            <p class="sub">Particulate Matter</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="pm25_count">42</h2>
+                        <p class="units">µg/m³</p>
+                    </div>
+                </div>
+
+                <div class="card warning">
+                    <div class="left">
+                        <i class="fa-solid fa-cloud"></i>
+                        <div>
+                            <p class="title">PM10</p>
+                            <p class="sub">Particulate Matter</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="pm10_count">51</h2>
+                        <p class="units">µg/m³</p>
+                    </div>
+                </div>
+
+                <div class="card good">
+                    <div class="left">
+                        <i class="fa-solid fa-skull-crossbones"></i>
+                        <div>
+                            <p class="title">CO</p>
+                            <p class="sub">Carbon Monoxide</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="co_count">504</h2>
+                        <p class="units">ppb</p>
+                    </div>
+                </div>
+
+                <div class="card good">
+                    <div class="left">
+                        <i class="fa-solid fa-industry"></i>
+                        <div>
+                            <p class="title">SO₂</p>
+                            <p class="sub">Sulfur Dioxide</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="SO₂_count">4</h2>
+                        <p class="units">ppb</p>
+                    </div>
+                </div>
+
+                <div class="card good">
+                    <div class="left">
+                        <i class="fa-solid fa-wind"></i>
+                        <div>
+                            <p class="title">NO₂</p>
+                            <p class="sub">Nitrogen Dioxide</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="NO₂_count">20</h2>
+                        <p class="units">ppb</p>
+                    </div>
+                </div>
+
+                <div class="card good">
+                    <div class="left">
+                        <i class="fa-solid fa-sun"></i>
+                        <div>
+                            <p class="title">O₃</p>
+                            <p class="sub">Ozone</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="O₃_count">18</h2>
+                        <p class="units">ppb</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

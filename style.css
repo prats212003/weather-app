@@ -1,0 +1,307 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    padding: 8px 10%;
+    margin-top: 3%;
+    font-family: Arial, sans-serif;
+    /* border: 1px solid black; */
+    background: linear-gradient(to bottom, #4facfe);
+}
+
+/* COMMON SECTION STYLE */
+.header,
+.weather,
+.air_qual {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* HEADER (slightly wider) */
+.header {
+    width: 102%;
+    margin-left: -1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* LOCATION */
+.loc_name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    color: white;
+}
+
+/* SEARCH */
+.loc_search {
+    padding: 12px 18px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+    width: 250px;
+    border: none;
+    cursor: pointer;
+}
+
+/* WEATHER SECTION */
+.weather {
+    display: flex;
+    gap: 20px;
+}
+
+/* TEMP CARD */
+.temp {
+    flex: 0.7;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.temp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* TEMP TEXT */
+.temperature {
+    font-size: 60px;
+    margin-left: 8%;
+    color: white;
+}
+
+.desc {
+    font-size: 20px;
+    margin-left: 10%;
+    margin-top: 5px;
+    color: white;
+}
+
+.temp_day{
+    font-size: 20px;
+    margin-left: 10%;
+    margin-top: 5px;
+    color: white;
+}
+
+/* TEMP DETAILS */
+.temp_details {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* .temp_details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+} */
+
+/* ROW1 */
+.temp_details_row1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.row1_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 20px;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* ROW2 */
+.temp_details_row2 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    margin: 10px 010px;
+}
+
+.row2_cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    font-size: 22px;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* AQI SECTION */
+.air_qual {
+    display: flex;
+    gap: 20px;
+}
+
+/* AQI MAIN */
+.aqi_main {
+    flex: 0.3;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.aqi_main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.aqi {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* AQI VALUE */
+.aqi_body {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.main_aqi {
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 28px;
+    /* background: #fff; */
+}
+
+.aqi_desc {
+    font-size: 18px;
+    color: white;
+}
+
+/* AQI DETAILS GRID */
+.aqi_details {
+    flex: 0.7;
+}
+
+.aqi-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* CARD */
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card_emoji{
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+/* LEFT */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.units{
+    /* border: 1px solid black; */
+    text-align: end;
+}
+
+/* TEXT */
+.title {
+    font-weight: 600;
+}
+
+.sub {
+    font-size: 12px;
+    color: #555;
+}
+
+/* RIGHT */
+/* .right h2 {
+    font-size: 20px;
+}
+
+.right p {
+    font-size: 14px;
+    color: #555;
+} */
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px 5%;
+    }
+
+    .weather,
+    .air_qual {
+        flex-direction: column;
+    }
+
+    .header {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .loc_search {
+        width: 150px;
+    }
+
+    .temp {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .temp_details_row2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .aqi-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
