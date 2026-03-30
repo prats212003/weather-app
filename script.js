@@ -77,7 +77,7 @@ async function getWeather(city) {
     aqi_desc.textContent = `${getAQIDescFromNumber(actualAQI)}`;
     humidity_val.textContent = `${humidity}%`;
     pressure_val.textContent = pressure;
-    wind_val.textContent = `${wind} m/s`;
+    wind_val.textContent = `${wind}m/s`;
 
     temperature.textContent = `${getweatherEmoji(emoji_id)} ${(temp - 273.15).toFixed(1)}°C`;
     desc.textContent = desc_val;
