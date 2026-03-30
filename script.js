@@ -54,7 +54,7 @@ async function getWeather(city) {
 
     console.log(aqiData);
 
-    let aqi_url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apikey}`;
+    let aqi_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apikey}`;
     let aqi_res = await fetch(aqi_url);
     let aqi_data = await aqi_res.json();
 
