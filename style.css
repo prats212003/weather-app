@@ -137,6 +137,9 @@ body {
     border-radius: 12px;
     transition: 0.3s;
     font-size: 20px;
+}
+
+.row1_cards:hover{
     transform: scale(1.05);
     cursor: pointer;
 }
@@ -157,6 +160,10 @@ body {
     background: #ffffff;
     border-radius: 10px;
     font-size: 22px;
+    transition: 0.3s;
+}
+
+.row2_cards:hover{
     transform: scale(1.05);
     cursor: pointer;
 }
