@@ -2,7 +2,6 @@ let cityName = document.querySelector(".location");
 let locSearch = document.querySelector(".loc_search");
 let temp_card = document.querySelector(".temp");
 let temp_details = document.querySelector(".temp_details");
-let apiKey = "705df37a320ecab15edf06f7149e86c5";
 let temperature = document.querySelector(".temperature");
 let desc = document.querySelector(".desc");
 let main_aqi = document.querySelector(".main_aqi");
@@ -44,23 +43,20 @@ function hideSkeleton() {
     aqi_details.classList.add("loaded");
 }
 
-// https://api.openweathermap.org/data/3.0/onecall/day_summary?lat=39.099724&lon=-94.578331&date=2020-03-04&appid={API key}
-
-// let temp_day = document.querySelector(".temp_day");
-
-// 🌍 WAQI TOKEN (replace demo with your own later)
-let aqiToken = "f4b35813f5798775bf927443141a762abf878e8c";
 
 // function to fetch weather
 async function getWeather(city) {
 
     try {
-        showSkeleton(); // 🔥 START animation
+        showSkeleton();
 
-        // WEATHER API
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-        let res = await fetch(apiUrl);
-        let data = await res.json();
+        // 🔥 CALL YOUR BACKEND (NOT API DIRECTLY)
+        let res = await fetch(`https://weather-backend-rouge.vercel.app/api/weather?city=Mumbai`);
+        let result = await res.json();
+
+        let data = result.weather;
+        let aqiData = result.aqi;
+        let aqi_data = result.pollution;
 
         cityName.textContent = data.name;
 
@@ -74,15 +70,6 @@ async function getWeather(city) {
         let pressure = data.main.pressure;
         let wind = data.wind.speed;
 
-        // WAQI API
-        let aqiUrl = `https://api.waqi.info/feed/${city}/?token=${aqiToken}`;
-        let aqiRes = await fetch(aqiUrl);
-        let aqiData = await aqiRes.json();
-
-        let aqi_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-        let aqi_res = await fetch(aqi_url);
-        let aqi_data = await aqi_res.json();
-
         let actualAQI = aqiData.data.aqi;
 
         let pm25_count = aqi_data.list[0].components.pm2_5;
@@ -92,7 +79,7 @@ async function getWeather(city) {
         let no2_count = aqi_data.list[0].components.no2;
         let o3_count = aqi_data.list[0].components.o3;
 
-        // update UI
+        // UI update
         main_aqi.textContent = actualAQI;
         aqi_desc.textContent = `${getAQIDescFromNumber(actualAQI)}`;
         humidity_val.textContent = `${humidity}%`;
@@ -122,24 +109,22 @@ async function getWeather(city) {
     } catch (error) {
         console.log("Error:", error);
     } finally {
-        // 🔥 STOP animation smoothly
         setTimeout(() => {
             hideSkeleton();
         }, 200);
     }
-
 }
 
 async function getForecast(city) {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
-    const res = await fetch(url);
-    const data = await res.json();
+    const res = await fetch(`https://weather-backend-rouge.vercel.app/api/weather?city=Mumbai`);
+    const result = await res.json();
+
+    const data = result.forecast;
 
     const daily = {};
 
     data.list.forEach(item => {
-
         const date = item.dt_txt.split(" ")[0];
         const temp = item.main.temp;
         const e_id = item.weather[0].id;
