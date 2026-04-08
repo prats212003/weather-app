@@ -51,7 +51,7 @@ async function getWeather(city) {
         showSkeleton();
 
         // 🔥 CALL YOUR BACKEND (NOT API DIRECTLY)
-        let res = await fetch(`https://weather-backend-rouge.vercel.app/api/weather?city=Mumbai`);
+        let res = await fetch(`https://weather-backend-rouge.vercel.app/api/weather?city=${city}`);
         let result = await res.json();
 
         let data = result.weather;
@@ -117,7 +117,7 @@ async function getWeather(city) {
 
 async function getForecast(city) {
 
-    const res = await fetch(`https://weather-backend-rouge.vercel.app/api/weather?city=Mumbai`);
+    const res = await fetch(`https://weather-backend-rouge.vercel.app/api/weather?city=${city}`);
     const result = await res.json();
 
     const data = result.forecast;
